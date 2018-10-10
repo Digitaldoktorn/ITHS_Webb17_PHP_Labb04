@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
@@ -47,4 +48,23 @@ class Media extends Model
       return $newID;
     }*/
 
+=======
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Media extends Model
+{
+    protected $primaryKey = 'isbn';
+
+    // creating pivot table "mediaPerReviews"
+    public function reviews() {
+        return $this->belongsToMany('App\Review', 'mediaPerReviews', 'media', 'review');
+    }
+
+    public function genre() {
+        return $this->belongsTo('App\Genre', 'genre', 'genreID');
+    }
+>>>>>>> e2df9ef4b1877ee832212b06da8eadd6712bb6d0
 }
