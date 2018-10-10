@@ -12,4 +12,8 @@ npm-debug.log
 yarn-error.log
 .env
 .phpunit.result.cache
+<<<<<<< HEAD
 database/migrations
+=======
+/database/migrations
+>>>>>>> cf3146e971b5869c145dba282e8121104cadf8f7
