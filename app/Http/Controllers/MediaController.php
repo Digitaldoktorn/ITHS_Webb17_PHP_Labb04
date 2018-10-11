@@ -12,7 +12,7 @@ class MediaController extends Controller
     public function index()
     {
 
-      $media = Media::all();
+      $media = Media::orderBy('title', 'asc')->paginate(20);
       return view('media.index', ['media' => $media ]);
 
 

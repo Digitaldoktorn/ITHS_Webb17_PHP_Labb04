@@ -17,5 +17,6 @@
             @endforeach
         </div>
     </div>
+    {{ $media->links() }}
 </div>
 @endsection
