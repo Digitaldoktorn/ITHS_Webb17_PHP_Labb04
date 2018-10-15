@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-
+use App\User;
 class UsersTableSeeder extends Seeder
 {
     /**
@@ -13,13 +13,11 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
 
-      factory(App\User::class, 50)->create();
-      /*DB::table('users')->insert([
-          'name' => 'Amelia',
-          'email' => 'aneta@gmail.com',
-          'password' => bcrypt('secret')
-
-      ]);*/
-//
+        User::create([
+            'name'    => 'test',
+            'email'    => 'test@gmail.com',
+            'password'   =>  Hash::make('test'),
+            'remember_token' =>  str_random(10),
+        ]);
     }
 }
