@@ -5,12 +5,14 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <h1>Media</h1>
+
             @foreach ($media as $medium)
               <div class="card">
-                  <div class="card-header">{{ $medium->title }}</div>
+                  <div class="card-header"><a href="{{ route('media.show', $medium) }}">
+                  {{ $medium->title }}
+                  </a></div>
                   <div class="card-body">
                     {{ $medium->ISBN }}, {{ $medium->author }}, {{ $medium->genre }}
-
 
                   </div>
               </div>

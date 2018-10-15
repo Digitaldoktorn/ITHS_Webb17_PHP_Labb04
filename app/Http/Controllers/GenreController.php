@@ -16,6 +16,8 @@ class GenreController extends Controller
     {
       $genres= Genre::all();
       return view('genres.index', ['genres' => $genres ]);
+
+      
     }
 
     /**
@@ -47,7 +49,7 @@ class GenreController extends Controller
      */
     public function show(Genre $genre)
     {
-        //
+        return view('genres.show', ['genre' => $genre ]);
     }
 
     /**

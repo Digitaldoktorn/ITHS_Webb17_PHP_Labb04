@@ -12,6 +12,15 @@
                     <li>ISBN: {{ $medium->ISBN }} </li>
                     <li>Author: {{ $medium->author }} </li>
                     <li>Genre: {{ $medium->genre }} </li>
+                    <div>Reviews</div>
+                    <ol>
+                    @foreach($medium->reviews as $review)
+                      <li>
+                    <div>Reviewer: {{ $review->name }}</div>
+                    <div>Review: {{ $review->review }}</div>
+                    </li>
+                    @endforeach
+                    </ol>
                   </ul>
                   </div>
               </div>

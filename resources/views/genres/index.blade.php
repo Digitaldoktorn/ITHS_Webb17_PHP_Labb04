@@ -7,7 +7,9 @@
             <h1>Genres</h1>
             @foreach ($genres as $genre)
               <div class="card">
-                  <div class="card-header">{{ $genre->genre }}</div>
+                  <div class="card-header"><a href="{{ route('genres.show', $genre) }}">
+                  {{ $genre->genre }}
+                  </a></div>
 
               </div>
             @endforeach

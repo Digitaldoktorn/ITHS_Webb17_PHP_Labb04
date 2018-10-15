@@ -15,9 +15,6 @@ class MediaController extends Controller
       $media = Media::all();
       return view('media.index', ['media' => $media ]);
 
-
-      /*$media = Media::getAllMedia();
-      return view('media', $media);*/
     }
     /**
      * Show the form for creating a new resource.
@@ -36,14 +33,13 @@ class MediaController extends Controller
      */
     public function store(Request $request)
     {
-      /*$id = Movie::create($request->all());
-      return redirect('movies');*/
+
 
       $this->validate($request, [
       'title' => 'required',
       'author' => 'required',
       'genre' => 'required',
-      'ISBN' => 'required',
+      'ISBN' => 'required'
       ]);
 
       Media::create($request->all());
@@ -60,10 +56,6 @@ class MediaController extends Controller
 
       return view('media.show', ['medium' => $medium ]);
 
-      /*$medium = Media::where('ID', $id)->get();
-      return view('media', [
-        'media' => $medium
-      ]);*/
     }
     /**
      * Show the form for editing the specified resource.

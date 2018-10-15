@@ -14,12 +14,11 @@ class Media extends Migration
     public function up()
     {
       Schema::create('media', function (Blueprint $table) {
-          $table->increments('id');
-          $table->string('ISBN');
+          $table->increments('media_id');
+          $table->integer('ISBN');
           $table->string('author');
           $table->string('title');
           $table->string('genre');
-          $table->string('media_type');
 
       });
     }
