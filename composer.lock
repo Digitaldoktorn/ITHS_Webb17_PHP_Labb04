@@ -2365,8 +2365,6 @@
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
             "time": "2018-10-02T16:36:10+00:00"
-<<<<<<< HEAD
-=======
         },
         {
             "name": "symfony/validator",
@@ -2453,7 +2451,6 @@
             "description": "Symfony Validator Component",
             "homepage": "https://symfony.com",
             "time": "2018-10-02T16:36:10+00:00"
->>>>>>> 31dfa1dbe1f5e0358f6780f6a906190c31a8c73e
         },
         {
             "name": "symfony/var-dumper",
@@ -2529,8 +2526,6 @@
                 "dump"
             ],
             "time": "2018-10-02T16:36:10+00:00"
-<<<<<<< HEAD
-=======
         },
         {
             "name": "symfony/yaml",
@@ -2590,7 +2585,6 @@
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
             "time": "2018-10-02T16:36:10+00:00"
->>>>>>> 31dfa1dbe1f5e0358f6780f6a906190c31a8c73e
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
