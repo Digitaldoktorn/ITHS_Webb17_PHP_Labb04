@@ -1,16 +1,30 @@
 @extends('layouts.app')
 
 @section('content')
-<form action="{{ route('media.store') }}" method="post">{{ csrf_field() }}
+{!! Form::open(['route' => 'media.store']) !!}
 
-<label for="title">Title</label>
-<input type="text" name="title">
-<label for="author">Author</label>
-<input type="text" name="author">
-<label for="genre">Genre</label>
-<input type="text" name="genre">
-<label for="ISBN">ISBN</label>
-<input type="text" name="ISBN">
-<button type="submit">Create</button>
-</form>
+            <div class="form-group">
+                {!! Form::label('title', 'title') !!}
+                {!! Form::text('title', null, ['class' => 'form-control']) !!}
+            </div>
+
+            <div class="form-group">
+                {!! Form::label('author', 'author') !!}
+                {!! Form::text('author', null, ['class' => 'form-control']) !!}
+            </div>
+
+            <div class="form-group">
+                {!! Form::label('genre', 'genre') !!}
+                {!! Form::text('genre', null, ['class' => 'form-control']) !!}
+            </div>
+
+            <div class="form-group">
+                {!! Form::label('ISBN', 'ISBN') !!}
+                {!! Form::text('ISBN', null, ['class' => 'form-control']) !!}
+            </div>
+
+            {!! Form::submit('Add this book', ['class' => 'btn btn-info']) !!}
+
+            {!! Form::close() !!}
+
 @endsection

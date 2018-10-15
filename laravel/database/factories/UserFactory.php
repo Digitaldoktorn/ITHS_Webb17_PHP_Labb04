@@ -13,14 +13,11 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(App\Media::class, function (Faker $faker) {
+$factory->define(App\User::class, function (Faker $faker) {
     return [
-
-        'author' => $faker->name,
-        'title' => $faker->title, // secret
-        'genre'=> $faker->word,
-        'media_type' => $faker->word,
-        'ISBN' => $faker->randomNumber,
-
+        'name' => $faker->name,
+        'email' => $faker->unique()->safeEmail,
+        'password' => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', // secret
+        'remember_token' => str_random(10),
     ];
 });

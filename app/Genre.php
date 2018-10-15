@@ -1,25 +1,31 @@
 <?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Genre extends Model
 <<<<<<< HEAD
-
-namespace App;
-
-use Illuminate\Database\Eloquent\Model;
-
-class Genre extends Model
-
-{   protected $primaryKey = "id";
-    protected $fillable = ['genre'];
-}
-=======
-namespace App;
-use Illuminate\Database\Eloquent\Model;
-use App\Media;
-class Genre extends Model
+{
+    public function category()
     {
-        protected $table = "genre";
-        protected $primaryKey = "genreID";
-        public function media() {
-            return $this->hasMany('App\Media', 'genre', 'genreID');
-        }
+         return $this->belongsTo('App\Category');
     }
->>>>>>> e2df9ef4b1877ee832212b06da8eadd6712bb6d0
+
+=======
+
+{   protected $primaryKey = "genre_id";
+    protected $fillable = ['genre'];
+
+
+
+    public function media() {
+      return $this->hasMany('App\Media', 'genre', 'genre');
+    }
+
+
+    /*public function movies() {
+      return $this->hasMany('App\Movie', 'category', 'categoryID');
+    }*/
+>>>>>>> 31dfa1dbe1f5e0358f6780f6a906190c31a8c73e
+}

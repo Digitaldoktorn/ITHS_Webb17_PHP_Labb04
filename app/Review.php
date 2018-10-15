@@ -6,18 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Review extends Model
 {
-<<<<<<< HEAD
-  protected $primaryKey = "ID";
+  protected $primaryKey = "review_id";
   public $timestamps = false;
   protected $fillable = [
-   'name', 'title'
+   'user_name', 'title', 'review'
   ];
-=======
-    // creating pivot table "mediaPerReviews"
-    public function media() {
-        return $this->belongsToMany('App\Review', 'mediaPerReviews', 'media', 'review');
-    }
 
 
->>>>>>> e2df9ef4b1877ee832212b06da8eadd6712bb6d0
+  public function media() {
+    return $this->hasOne('App\Media', 'title', 'title');
+  }
+
 }

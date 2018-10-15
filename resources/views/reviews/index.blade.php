@@ -9,7 +9,7 @@
               <div class="card">
                   <div class="card-header">{{ $review->name }}</div>
                   <div class="card-body">
-                    {{ $review->title }}
+                    {{ $review->title }}, {{ $review->review }}
 
                   </div>
               </div>
