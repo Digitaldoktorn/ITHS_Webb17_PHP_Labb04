@@ -19,3 +19,19 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+<<<<<<< HEAD
+=======
+Route::get('/media/{medium}', 'MediaController@show');
+Route::get('/media', 'MediaController@index');
+Route::get('/media/create', 'MediaController@create');
+Route::post('/media', 'MediaController@store');
+Route::get('/genres', 'GenreController@index');
+Route::get('/genres/{genre}', 'GenreController@show');
+Route::get('/reviews', 'ReviewController@index');
+Route::get('/reviews/{review}', 'ReviewController@show');
+
+
+Route::resource('/media', 'MediaController');
+Route::resource('/genres', 'GenreController');
+Route::resource('/reviews', 'ReviewController');
+>>>>>>> 31dfa1dbe1f5e0358f6780f6a906190c31a8c73e

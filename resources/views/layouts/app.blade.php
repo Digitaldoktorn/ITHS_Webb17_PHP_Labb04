@@ -21,6 +21,16 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+<<<<<<< HEAD
+=======
+  @if(count($errors) > 0)
+<ul>
+@foreach ($errors->all() as $error)
+<li>{{ $error }}</li>
+@endforeach
+</ul>
+@endif
+>>>>>>> 31dfa1dbe1f5e0358f6780f6a906190c31a8c73e
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
