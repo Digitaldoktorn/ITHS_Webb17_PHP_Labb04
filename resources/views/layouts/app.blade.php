@@ -19,6 +19,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    
+
 </head>
 <body>
   @if(count($errors) > 0)

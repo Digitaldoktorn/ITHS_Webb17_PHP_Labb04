@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'http://localhost:8888/_PHP/_Laborationer/ITHS_Webb17_PHP_Labb04/public'),
 
     /*
     |--------------------------------------------------------------------------
