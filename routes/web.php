@@ -18,14 +18,15 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/media/{medium}', 'MediaController@show');
-Route::get('/media', 'MediaController@index');
-Route::get('/media/create', 'MediaController@create');
-Route::post('/media', 'MediaController@store');
+//Route::get('/media/{medium}', 'MediaController@show');
+//Route::get('/media', 'MediaController@index');
+//Route::get('/media/create', 'MediaController@create');
+//Route::post('/media', 'MediaController@store');
 Route::get('/genres', 'GenreController@index');
 Route::get('/genres/{genre}', 'GenreController@show');
 Route::get('/reviews', 'ReviewController@index');
 Route::get('/reviews/{review}', 'ReviewController@show');
+Route::get('/users', 'UserController@index');
 
 
 Route::resource('/media', 'MediaController');
