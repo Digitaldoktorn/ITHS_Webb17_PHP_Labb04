@@ -18,10 +18,10 @@ class ReviewController extends Controller
     //   $reviews= Review::all();
     //   return view('reviews.index', ['reviews' => $reviews ]);
     // }
-
+    
     public function loggedIn() {
         if (Gate::allows('logged-in-only', auth()->user())){
-            $reviews = Review::all();
+            $reviews = Review::orderBy('title', 'asc')->paginate(5);
             return view('reviews.index', [
                 'reviews' => $reviews
             ]);

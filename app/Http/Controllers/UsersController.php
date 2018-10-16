@@ -15,7 +15,7 @@ class UsersController extends Controller {
 
     public function loggedIn() {
         if (Gate::allows('logged-in-only', auth()->user())){
-            $users = User::all();
+            $users  = User::orderBy('name', 'asc')->paginate(20);
             return view('users.index', [
                 'users' => $users
             ]);

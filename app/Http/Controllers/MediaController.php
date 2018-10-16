@@ -20,7 +20,7 @@ class MediaController extends Controller
 
     public function loggedIn() {
         if (Gate::allows('logged-in-only', auth()->user())){
-            $media = Media::all();
+            $media = Media::orderBy('title', 'asc')->paginate(5);
             return view('media.index', [
                 'media' => $media
             ]);

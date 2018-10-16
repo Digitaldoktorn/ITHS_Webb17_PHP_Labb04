@@ -17,7 +17,10 @@
        <th>{{ $user->name }} </th>
        </tr>
        @endforeach
+
        </table>
+       <br>
+            {{ $users->links() }}
     </div>
 </div>
 
