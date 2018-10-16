@@ -22,7 +22,7 @@
                         
                     @endif
 
-                    <!-- Anders: now admin can also see genres, books and reviews -->
+                    <!-- Anders comment: now admin can also see genres, books and reviews -->
                     @if (Auth::user())
                         <br><br>
                         <div class="row">
