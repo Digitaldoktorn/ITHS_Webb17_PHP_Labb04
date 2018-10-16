@@ -49,6 +49,9 @@ Route::get('/users', 'UsersController@index');
 
 // Anders added these:
 Route::get('/media', 'MediaController@loggedIn');
+Route::get('/genres', 'GenreController@loggedIn');
+Route::get('/reviews', 'ReviewController@loggedIn');
+Route::get('/users', 'UsersController@loggedIn');
 
 
 

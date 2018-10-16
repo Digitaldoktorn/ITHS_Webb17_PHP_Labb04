@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Review;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class ReviewController extends Controller
 {
@@ -12,10 +13,20 @@ class ReviewController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-      $reviews= Review::all();
-      return view('reviews.index', ['reviews' => $reviews ]);
+    // public function index()
+    // {
+    //   $reviews= Review::all();
+    //   return view('reviews.index', ['reviews' => $reviews ]);
+    // }
+
+    public function loggedIn() {
+        if (Gate::allows('logged-in-only', auth()->user())){
+            $reviews = Review::all();
+            return view('reviews.index', [
+                'reviews' => $reviews
+            ]);
+        }
+        return 'You are not logged in!';
     }
 
     /**
