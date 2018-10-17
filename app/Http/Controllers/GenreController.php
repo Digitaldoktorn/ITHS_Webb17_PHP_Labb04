@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Genre;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class GenreController extends Controller
 {
@@ -12,12 +13,22 @@ class GenreController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-      $genres= Genre::all();
-      return view('genres.index', ['genres' => $genres ]);
+    // public function index()
+    // {
+    //   $genres= Genre::all();
+    //   return view('genres.index', ['genres' => $genres ]);
 
       
+    // }
+
+    public function loggedIn() {
+        if (Gate::allows('logged-in-only', auth()->user())){
+            $genres = Genre::all();
+            return view('genres.index', [
+                'genres' => $genres
+            ]);
+        }
+        return 'You are not logged in!';
     }
 
     /**

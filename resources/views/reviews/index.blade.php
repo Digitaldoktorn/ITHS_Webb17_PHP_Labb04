@@ -14,6 +14,8 @@
                   </div>
               </div>
             @endforeach
+            <br>
+            {{ $reviews->links() }}
         </div>
     </div>
 </div>

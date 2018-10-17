@@ -23,8 +23,13 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->registerPolicies();
+        // $this->registerPolicies();
 
-        //
+        Gate::define('logged-in-only', function ($user){
+            if($user->login_status == 1){
+                return true;
+            }
+            return false;
+        });
     }
 }

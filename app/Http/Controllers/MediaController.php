@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Media;
+use Illuminate\Support\Facades\Gate;
 class MediaController extends Controller
 {
     /**
@@ -9,12 +10,22 @@ class MediaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    // public function index()
+    // {
 
-      $media = Media::orderBy('title', 'asc')->paginate(20);
-      return view('media.index', ['media' => $media ]);
+    //   $media = Media::orderBy('title', 'asc')->paginate(20);
+    //   return view('media.index', ['media' => $media ]);
 
+    // }
+
+    public function loggedIn() {
+        if (Gate::allows('logged-in-only', auth()->user())){
+            $media = Media::orderBy('title', 'asc')->paginate(5);
+            return view('media.index', [
+                'media' => $media
+            ]);
+        }
+        return 'You are not logged in!';
     }
     /**
      * Show the form for creating a new resource.

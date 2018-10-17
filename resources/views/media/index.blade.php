@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <h1>Media</h1>
+            <h1>Books</h1>
 
             @foreach ($media as $medium)
               <div class="card">
@@ -42,8 +42,10 @@
 </td>
 
             @endforeach
+            <br>
+            {{ $media->links() }}
         </div>
+        
     </div>
-    {{ $media->links() }}
 </div>
 @endsection
