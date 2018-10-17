@@ -13,6 +13,7 @@ class UsersController extends Controller {
     //     return view('users.index', compact('users'));
     // }
 
+    // Only logged in users can see quries. Pagination added.
     public function loggedIn() {
         if (Gate::allows('logged-in-only', auth()->user())){
             $users  = User::orderBy('name', 'asc')->paginate(20);

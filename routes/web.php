@@ -48,7 +48,7 @@ Route::get('main/successlogin', 'MainController@successlogin');
 Route::get('main/logout', 'MainController@logout');
 Route::get('/users', 'UsersController@index');
 
-// Anders added these:
+// Anders added these for Gate (login)
 Route::get('/media', 'MediaController@loggedIn');
 Route::get('/genres', 'GenreController@loggedIn');
 Route::get('/reviews', 'ReviewController@loggedIn');

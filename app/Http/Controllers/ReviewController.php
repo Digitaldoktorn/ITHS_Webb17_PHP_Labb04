@@ -19,6 +19,7 @@ class ReviewController extends Controller
     //   return view('reviews.index', ['reviews' => $reviews ]);
     // }
     
+    // Only logged in users can see quries. Pagination added.
     public function loggedIn() {
         if (Gate::allows('logged-in-only', auth()->user())){
             $reviews = Review::orderBy('title', 'asc')->paginate(5);

@@ -25,7 +25,7 @@
 
                     </ol>
                     <br>
-
+                    <!-- Anders: Tried to fix "Reserve book" functinality-no success-->
                     {!! Form::open(['route' => ['media.update', $medium->media_id ]]) !!}
                     {{Form::hidden('status', 'not-available', ['class' => 'form-control'])}}
                     <!-- {{Form::text('id', $medium->media_id, ['class' => 'form-control'])}} -->
