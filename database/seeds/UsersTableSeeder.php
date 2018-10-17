@@ -13,7 +13,7 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
 
-
+/*creating 300 users */
      factory(App\User::class, 150)->create();
 
    /* App\User::create([
