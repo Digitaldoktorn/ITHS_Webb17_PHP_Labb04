@@ -13,11 +13,37 @@
                   </a></div>
                   <div class="card-body">
                     {{ $medium->ISBN }}, {{ $medium->author }}, {{ $medium->genre }}
-
                   </div>
               </div>
+              <td>
+
+    <form action="{{ route('media.destroy',$medium) }}" method="POST">
+
+
+
+        <a class="btn btn-info" href="{{ route('media.show',$medium) }}">Show</a>
+
+
+
+        <a class="btn btn-primary" href="{{ route('media.edit',$medium) }}">Edit</a>
+
+
+
+        @csrf
+
+        @method('DELETE')
+
+
+
+        <button type="submit" class="btn btn-danger">Delete</button>
+
+    </form>
+
+</td>
+
             @endforeach
         </div>
     </div>
+    {{ $media->links() }}
 </div>
 @endsection

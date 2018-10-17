@@ -1,22 +1,40 @@
-@extends('layouts.app')
+@extends('home')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <h1>Users</h1>
 
-            @foreach ($users as $user)
-              <div class="card">
-
-                  {{ $user->name }}
-                  </a></div>
-                  <div class="card-body">
-                    {{ $user->email }}, {{ $user->password }}
-                  </div>
-              </div>
-            @endforeach
-        </div>
+<div class="row">
+    <div class="col-md-12">
+        <br />
+        <h3 align="center">Users</h3>
+        <table>
+        <thead>
+        <tr>
+            <th class="fluid" style="background-color:grey;">Users registered</th>
+        </tr>
+    </thead>
+       @foreach ($users as $user)
+       <tr>
+       <th>{{ $user->name }} </th>
+       </tr>
+       @endforeach
+       </table>
     </div>
 </div>
+
 @endsection
+
+<style>
+table {
+    border-collapse: collapse;
+}
+th, td {
+    border: solid 1px #CCC;
+    padding: 10px;
+}
+.fixed {
+    max-width: 300px;
+	  min-width: 300px;
+}
+.fluid {
+		width: 50%;
+}</style>
