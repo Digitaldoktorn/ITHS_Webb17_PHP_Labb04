@@ -15,6 +15,7 @@
                     {{ $medium->ISBN }}, {{ $medium->author }}, {{ $medium->genre }}
                   </div>
               </div>
+              @if (Auth::user() && Auth::user()->type == 'admin')
               <td>
 
     <form action="{{ route('media.destroy',$medium) }}" method="POST">
@@ -40,12 +41,12 @@
     </form>
 
 </td>
-
+@endif
             @endforeach
             <br>
             {{ $media->links() }}
         </div>
-        
+
     </div>
 </div>
 @endsection

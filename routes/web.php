@@ -24,17 +24,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-<<<<<<< HEAD
 //Route::get('/media/{medium}', 'MediaController@show');
 //Route::get('/media', 'MediaController@index');
 //Route::get('/media/create', 'MediaController@create');
 //Route::post('/media', 'MediaController@store');
-=======
-Route::get('/media/{medium}', 'MediaController@show');
-Route::get('/media', 'MediaController@index');
-Route::get('/media/create', 'MediaController@create');
-Route::post('/media', 'MediaController@store');
->>>>>>> bd81fbc057b71e805f17d08a081680c4bedc0ccf
 //Route::get('/genres', 'GenreController@index');
 //Route::get('/genres/{genre}', 'GenreController@show');
 Route::get('/reviews', 'ReviewController@index');
@@ -54,15 +47,9 @@ Route::post('/main/checklogin', 'MainController@checklogin');
 Route::get('main/successlogin', 'MainController@successlogin');
 Route::get('main/logout', 'MainController@logout');
 Route::get('/users', 'UsersController@index');
-<<<<<<< HEAD
-=======
 
 // Anders added these:
 Route::get('/media', 'MediaController@loggedIn');
 Route::get('/genres', 'GenreController@loggedIn');
 Route::get('/reviews', 'ReviewController@loggedIn');
 Route::get('/users', 'UsersController@loggedIn');
-
-
-
->>>>>>> bd81fbc057b71e805f17d08a081680c4bedc0ccf
