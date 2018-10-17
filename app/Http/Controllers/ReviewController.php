@@ -26,7 +26,7 @@ class ReviewController extends Controller
                 'reviews' => $reviews
             ]);
         }
-        return 'You are not logged in!';
+        return view ('login');
     }
 
     /**

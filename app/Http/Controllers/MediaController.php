@@ -50,7 +50,7 @@ class MediaController extends Controller
       'title' => 'required',
       'author' => 'required',
       'genre' => 'required',
-      'ISBN' => 'required'
+      'ISBN' => 'required',
       ]);
 
       Media::create($request->all());
@@ -74,9 +74,13 @@ class MediaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Media $medium)
+
     {
-        //
+
+      return view('media.edit', ['medium' => $medium ]);
+
+
     }
     /**
      * Update the specified resource in storage.
@@ -85,9 +89,22 @@ class MediaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Media $medium)
     {
-        //
+        $request->validate([
+          'title' => 'required',
+          'author' => 'required',
+          'genre' => 'required',
+          'ISBN' => 'required',
+
+      ]);
+
+      $medium->update($request->all());
+      return redirect()->route('media.index')
+
+                ->with('success','Book updated successfully');
+
+//
     }
     /**
      * Remove the specified resource from storage.
@@ -95,12 +112,14 @@ class MediaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Media $medium)
     {
-        //
+
+      $medium->delete();
+      return redirect()->route('media.index')
+
+              ->with('success','Product deleted successfully');
+//
     }
-    /*public function mbq ($firstYear, $lastYear) {
-    $movies = Movie::mbq($firstYear, $lastYear);
-    return view('moviesByQuery', $movies);
-  }*/
+
 }

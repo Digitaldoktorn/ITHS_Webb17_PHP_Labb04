@@ -28,7 +28,7 @@ class GenreController extends Controller
                 'genres' => $genres
             ]);
         }
-        return 'You are not logged in!';
+        return view ('login');
     }
 
     /**

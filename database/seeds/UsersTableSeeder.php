@@ -13,18 +13,23 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
 
-    //   factory(App\User::class, 50)->create();
-      
-       App\User::create([
-        'id' => 'AUTO_INCREMENT',
-        'name'    => 'John Smith',
-        'email'    => 'john_smith@gmail.com',
-        'password'   =>  Hash::make('password'),
-        'remember_token' =>  str_random(10),
-        'created_at' => '',
-        'updated_at' => '',
-        'type' => 'admin',
-    ]);
+
+     factory(App\User::class, 150)->create();
+
+   /* App\User::create([
+
+    'name'   => 'kamau',
+    'email'    => 'kamau@kenya.com',
+    'password'   =>  Hash::make('admin'),
+    'remember_token' =>  str_random(10),
+    'type' => 'admin',
+]);
 
     }
+}
+
+
+
+*/
+}
 }

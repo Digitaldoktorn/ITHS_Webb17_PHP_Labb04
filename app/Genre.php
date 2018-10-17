@@ -16,7 +16,5 @@ class Genre extends Model
     }
 
 
-    /*public function movies() {
-      return $this->hasMany('App\Movie', 'category', 'categoryID');
-    }*/
+
 }
