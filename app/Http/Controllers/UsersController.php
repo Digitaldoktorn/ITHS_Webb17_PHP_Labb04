@@ -20,7 +20,7 @@ class UsersController extends Controller {
                 'users' => $users
             ]);
         }
-        return 'You are not logged in!';
+        return view ('login');
     }
 }
 
