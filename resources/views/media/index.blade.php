@@ -5,6 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <h1>Books</h1>
+            <a class="btn btn-info" href="{{ route('media.create') }}">Add a new book</a>
 
             @foreach ($media as $medium)
               <div class="card">
