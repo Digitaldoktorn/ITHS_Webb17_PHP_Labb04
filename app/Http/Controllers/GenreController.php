@@ -21,6 +21,7 @@ class GenreController extends Controller
       
     // }
 
+    // Only logged in users can see quries.
     public function loggedIn() {
         if (Gate::allows('logged-in-only', auth()->user())){
             $genres = Genre::all();
